@@ -59,6 +59,10 @@ public class JwtUtil
         {
             return false;
         }
+        catch (InvalidTokenPartsException)
+        {
+            return false;
+        }
         return true;
     }
     

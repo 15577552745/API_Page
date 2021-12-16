@@ -65,15 +65,14 @@ namespace API_Page.Controllers
         [HttpGet("students") ]
         public IActionResult studentlist()
         {
-            HttpRequestHeaders headers = new HttpRequestMessage().Headers;
-            
+            var tryGetValue = Request.Headers.TryGetValue("token", out var token);
+
             //如果请求头没有token
-            if (!headers.Contains("token"))
+            if (!tryGetValue)
             {
                 return ApiJsonResponse.error(401, "未登录");
             }
-
-            String token = headers.GetValues("token").First();
+            
             //验证token
             bool valid = JwtUtil.valid(token);
 
