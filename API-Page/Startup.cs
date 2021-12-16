@@ -1,18 +1,12 @@
 using API_Page.data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using API_Page.service;
 
 namespace API_Page
 {
@@ -32,18 +26,18 @@ namespace API_Page
             var sqlConnection = Configuration.GetConnectionString("SqlServerConnection");
             services.AddDbContext<ApiDBContent>(option => option.UseSqlServer(sqlConnection));
             services.AddMvc();
-
             services.AddControllers();
+          
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API_Page", Version = "v1" });
             });
 
-            //×¢²ácors
+            //×¢ï¿½ï¿½cors
             services.AddCors(option => option.AddPolicy("any",build=>
                 build.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod())
             );
-
+            services.AddTransient<UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,7 +53,7 @@ namespace API_Page
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            //×¢²áCors·þÎñ
+            //×¢ï¿½ï¿½Corsï¿½ï¿½ï¿½ï¿½
             app.UseCors("any");
 
             app.UseAuthorization();

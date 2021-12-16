@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http.Cors;
 using API_Page.data;
+using API_Page.dto;
 using API_Page.Models;
-using API_Page.newObj;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_Page.Controllers
@@ -25,7 +25,7 @@ namespace API_Page.Controllers
         //JsonResult
 
         [HttpPost("test")]
-        public IActionResult Test(userObj userObj)
+        public IActionResult Test(UserDTO userObj)
         {
             String username = userObj.username;
             String password = userObj.password;

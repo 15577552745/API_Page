@@ -1,32 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\yhb\\Desktop\\project\\API_Page\\API-Page\\API-Page\\API-Page.csproj": {}
+    "/Users/liushuai/Desktop/img/API_Page/API-Page/API-Page.csproj": {}
   },
   "projects": {
-    "D:\\Users\\yhb\\Desktop\\project\\API_Page\\API-Page\\API-Page\\API-Page.csproj": {
+    "/Users/liushuai/Desktop/img/API_Page/API-Page/API-Page.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\yhb\\Desktop\\project\\API_Page\\API-Page\\API-Page\\API-Page.csproj",
+        "projectUniqueName": "/Users/liushuai/Desktop/img/API_Page/API-Page/API-Page.csproj",
         "projectName": "API-Page",
-        "projectPath": "D:\\Users\\yhb\\Desktop\\project\\API_Page\\API-Page\\API-Page\\API-Page.csproj",
-        "packagesPath": "C:\\Users\\yhb\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\yhb\\Desktop\\project\\API_Page\\API-Page\\API-Page\\obj\\",
+        "projectPath": "/Users/liushuai/Desktop/img/API_Page/API-Page/API-Page.csproj",
+        "packagesPath": "/Users/liushuai/.nuget/packages/",
+        "outputPath": "/Users/liushuai/Desktop/img/API_Page/API-Page/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\yhb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/liushuai/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -37,30 +35,40 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
+            "JWT": {
+              "target": "Package",
+              "version": "[8.7.0, )"
+            },
             "Microsoft.AspNet.WebApi.Cors": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[5.2.7, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[6.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[6.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[5.6.3, )"
+              "version": "[6.2.3, )"
             }
           },
           "imports": [
@@ -81,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/liushuai/.dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }

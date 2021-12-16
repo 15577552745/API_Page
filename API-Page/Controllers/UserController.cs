@@ -1,8 +1,15 @@
-﻿using API_Page.data;
-using API_Page.newObj;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
+using API_Page.dto;
+using API_Page.Models;
+using API_Page.service;
+using API_Page.utils;
+using API_Page.vo;
 
 namespace API_Page.Controllers
 {
@@ -13,38 +20,85 @@ namespace API_Page.Controllers
     {
 
 
-        private readonly ApiDBContent _context;
+        private readonly UserService userService;
 
-        public UserController(ApiDBContent myContext)
+        public UserController(UserService userService)
         {
-            _context = myContext;
+            this.userService = userService;
         }
-
-
-        [HttpPost("user")]
-        public IActionResult user(userObj userObj)
+        
+        
+        /**
+         * 用户登录
+         */
+        [HttpPost("login")]
+        public IActionResult login(UserDTO userDto)
         {
-            string username = userObj.username;
-            string password = userObj.password;
+            bool valid = userDto.verifyIsNullOrEmpty();
+            
+            if (valid)
+            {
+                return ApiJsonResponse.error(400, "参数不能为空");
+            }
+            
+            User user = userService.getUser(userDto.username);
+            
+            if (user == null)
+            {
+                return ApiJsonResponse.error(404, "未找到该用户");
+            }
+            
+            if (!user.Password.Equals(userDto.password))
+            {
+                return ApiJsonResponse.error(401, "用户名或密码不正确");
+            }
+            
+            return ApiJsonResponse.ok(JwtUtil.generateToken(user));
+        }
+        
+        
+        
 
-            if (userObj.username == null && userObj.password == null)
+        /**
+         * 查询所有学生信息
+         */
+        [HttpGet("students") ]
+        public IActionResult studentlist()
+        {
+            HttpRequestHeaders headers = new HttpRequestMessage().Headers;
+            
+            //如果请求头没有token
+            if (!headers.Contains("token"))
             {
-                return NotFound("账号密码不能为空");
-            } if (_context.Users.Any(u => u.StudentId == username && u.Password == password))
-            {
-                dynamic data = new { res = 100 };
-                return Ok(data);
+                return ApiJsonResponse.error(401, "未登录");
             }
 
-            return Ok();
+            String token = headers.GetValues("token").First();
+            //验证token
+            bool valid = JwtUtil.valid(token);
+
+            if (!valid)
+            {
+                return  ApiJsonResponse.error(401, "token令牌无效");
+            }
+            
+            User user =  JwtUtil.getUser(token);
+
+            if (user.Role != 1)
+            {
+                return  ApiJsonResponse.error(403, "没有权限,只有老师才能查看所有学生信息");
+            }
+            
+            
+            List<User> allStudent = userService.getAllStudent();
+            return ApiJsonResponse.ok(allStudent);
         }
 
-        [HttpGet("studentlist") ]
-        public  IActionResult studentlist(userObj userObj)
-        {
 
-           var student = _context.Users.ToList();
-            return Ok(student);
-        }
+       
+        
+        
+        
+        
     }
 }
