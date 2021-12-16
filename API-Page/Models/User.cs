@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using API_Page.core.Enums;
 
 namespace API_Page.Models
 {
@@ -37,5 +38,13 @@ namespace API_Page.Models
 
         [Display(Name = "角色")]
         public int Role { get; set; }
+
+
+
+        public bool isTeacherPermissions()
+        {
+            return Role == (int) RoleEnum.TEACHER;
+        }
+        
     }
 }

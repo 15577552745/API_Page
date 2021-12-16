@@ -83,7 +83,7 @@ namespace API_Page.Controllers
             
             User user =  JwtUtil.getUser(token);
 
-            if (user.Role != 1)
+            if (!user.isTeacherPermissions())
             {
                 return  ApiJsonResponse.error(403, "没有权限,只有老师才能查看所有学生信息");
             }
