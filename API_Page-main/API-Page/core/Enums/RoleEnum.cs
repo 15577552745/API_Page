@@ -1,4 +1,4 @@
-
+namespace API_Page.core.Enums;
 
 public enum RoleEnum
 {

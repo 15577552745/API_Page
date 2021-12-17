@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using API_Page.core.Enums;
 
 
 namespace API_Page.Models

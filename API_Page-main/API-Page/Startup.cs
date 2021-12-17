@@ -6,8 +6,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+<<<<<<< HEAD:API_Page-main/API-Page/Startup.cs
 using StackExchange.Redis;
 
+=======
+using API_Page.service;
+>>>>>>> f8d6d5f2462ae6b2acad02bfa94168ff33aa3bc4:API-Page/Startup.cs
 
 namespace API_Page
 {

@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using API_Page.core.Enums;
 using API_Page.data;
 using API_Page.Models;
 
-
+namespace API_Page.service;
 
 public class UserService
 {

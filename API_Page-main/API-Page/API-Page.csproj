@@ -18,12 +18,16 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+<<<<<<< HEAD:API_Page-main/API-Page/API-Page.csproj
     <PackageReference Include="StackExchange.Redis" Version="2.2.88" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Redis\Program.cs" />
+=======
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+>>>>>>> f8d6d5f2462ae6b2acad02bfa94168ff33aa3bc4:API-Page/API-Page.csproj
   </ItemGroup>
 
 </Project>

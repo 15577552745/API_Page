@@ -2,7 +2,7 @@ using System;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 
-
+namespace API_Page.vo;
 
 public class ApiJsonResponse
 {

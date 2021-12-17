@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD:API_Page-main/API-Page/obj/API-Page.csproj.nuget.dgspec.json
     "D:\\Users\\yhb\\Desktop\\C#Demo\\.net 6.0API\\API_Page-main\\API-Page\\API-Page.csproj": {}
   },
   "projects": {
@@ -12,16 +13,27 @@
         "projectPath": "D:\\Users\\yhb\\Desktop\\C#Demo\\.net 6.0API\\API_Page-main\\API-Page\\API-Page.csproj",
         "packagesPath": "C:\\Users\\yhb\\.nuget\\packages\\",
         "outputPath": "D:\\Users\\yhb\\Desktop\\C#Demo\\.net 6.0API\\API_Page-main\\API-Page\\obj\\",
+=======
+    "/Users/liushuai/Desktop/img/API_Page/API-Page/API-Page.csproj": {}
+  },
+  "projects": {
+    "/Users/liushuai/Desktop/img/API_Page/API-Page/API-Page.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/liushuai/Desktop/img/API_Page/API-Page/API-Page.csproj",
+        "projectName": "API-Page",
+        "projectPath": "/Users/liushuai/Desktop/img/API_Page/API-Page/API-Page.csproj",
+        "packagesPath": "/Users/liushuai/.nuget/packages/",
+        "outputPath": "/Users/liushuai/Desktop/img/API_Page/API-Page/obj/",
+>>>>>>> f8d6d5f2462ae6b2acad02bfa94168ff33aa3bc4:API-Page/obj/API-Page.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\yhb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/liushuai/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -67,10 +79,13 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.1, )"
+<<<<<<< HEAD:API_Page-main/API-Page/obj/API-Page.csproj.nuget.dgspec.json
             },
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.2.88, )"
+=======
+>>>>>>> f8d6d5f2462ae6b2acad02bfa94168ff33aa3bc4:API-Page/obj/API-Page.csproj.nuget.dgspec.json
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -95,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/liushuai/.dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }

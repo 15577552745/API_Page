@@ -7,7 +7,7 @@ using JWT.Exceptions;
 using JWT.Serializers;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
-
+namespace API_Page.utils;
 
 public class JwtUtil
 {
